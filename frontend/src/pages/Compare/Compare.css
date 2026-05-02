@@ -1,0 +1,168 @@
+/* ─────────────────────────────────────────────────────────
+   Compare.css
+───────────────────────────────────────────────────────── */
+
+.compare { padding-block: 48px 64px; }
+
+.compare__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.compare__tag   { margin-bottom: 12px; }
+.compare__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+.compare__sub { font-size: 14px; color: var(--color-text-secondary); }
+.compare__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Best banner */
+.compare__banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  background: var(--color-green-faint);
+  border: 0.5px solid var(--color-green-pale);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+.compare__banner-star { color: var(--color-green); font-size: 15px; }
+.compare__banner strong { color: var(--color-green); }
+
+/* ── Column ───────────────────────────────────────────── */
+.compare__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.compare-col { display: flex; flex-direction: column; gap: 10px; }
+
+/* Column header card */
+.compare-col__header {
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.compare-col__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.compare-col__name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.compare-col__meta { font-size: 11px; color: var(--color-text-muted); }
+
+/* Image area */
+.compare-col__img-area {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+  position: relative;
+  transition: border-color var(--transition-base);
+}
+.compare-col__img-area--loading { border: 0.5px solid; }
+
+.compare-col__img  { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.compare-col__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 46, 32, 0.52);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.compare-col__img-area:hover .compare-col__overlay { opacity: 1; }
+
+.compare-col__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.compare-col__placeholder-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 0.5px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compare-col__placeholder-text {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Stats card */
+.compare-col__stats {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.compare-col__stat-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-bottom: 3px;
+}
+.compare-col__stat-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Regen button */
+.compare-col__regen {
+  padding: 7px 0;
+  width: 100%;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border: 0.5px solid;
+}
+
+/* Legend */
+.compare__legend {
+  margin-top: 36px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+.compare__legend strong { color: var(--color-text-primary); font-family: var(--font-display); }
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 860px) {
+  .compare__grid { grid-template-columns: 1fr; }
+}

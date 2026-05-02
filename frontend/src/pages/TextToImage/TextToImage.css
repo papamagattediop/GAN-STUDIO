@@ -1,0 +1,167 @@
+/* ─────────────────────────────────────────────────────────
+   TextToImage.css
+───────────────────────────────────────────────────────── */
+
+.t2i { padding-block: 48px 64px; }
+
+/* ── Header ───────────────────────────────────────────── */
+.t2i__header { margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
+.t2i__title  {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+}
+.t2i__sub        { color: var(--color-text-secondary); font-size: 15px; }
+.t2i__model-name {
+  color: var(--color-green);
+  font-weight: 500;
+}
+
+/* ── Layout 2 colonnes ────────────────────────────────── */
+.t2i__layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Panel gauche ─────────────────────────────────────── */
+.t2i__controls { display: flex; flex-direction: column; gap: 14px; }
+
+/* Prompt card */
+.t2i__prompt-card { padding: 20px; }
+.t2i__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.t2i__textarea {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+.t2i__textarea:focus {
+  border-color: var(--color-green-pale);
+  box-shadow: 0 0 0 3px rgba(74,123,90,0.07);
+}
+.t2i__textarea::placeholder { color: var(--color-text-muted); }
+.t2i__hint {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+/* Exemples */
+.t2i__examples-card { padding: 16px 20px; }
+.t2i__examples { display: flex; flex-direction: column; gap: 6px; }
+.t2i__example-btn {
+  text-align: left;
+  background: transparent;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.t2i__example-btn:hover {
+  border-color: var(--color-green-pale);
+  color: var(--color-green);
+}
+
+/* Tailles */
+.t2i__size-card { padding: 16px 20px; }
+.t2i__sizes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.t2i__size-btn {
+  padding: 8px 0;
+  background: transparent;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.t2i__size-btn--active {
+  background: var(--color-green-faint);
+  border-color: var(--color-green-pale);
+  color: var(--color-green);
+}
+.t2i__size-btn:not(.t2i__size-btn--active):hover {
+  border-color: var(--color-border-medium);
+  color: var(--color-text-primary);
+}
+
+/* Submit */
+.t2i__submit { padding: 13px; font-size: 15px; }
+.t2i__time   {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: -4px;
+}
+
+/* ── Résultat ─────────────────────────────────────────── */
+.t2i__result {
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.t2i__output { width: 100%; }
+
+.t2i__image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  display: block;
+  object-fit: cover;
+}
+
+.t2i__output-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.t2i__output-prompt {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .t2i__layout { grid-template-columns: 1fr; }
+  .t2i__result { min-height: 320px; }
+}

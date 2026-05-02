@@ -1,0 +1,85 @@
+/* ─────────────────────────────────────────────────────────
+   layout.css — Grilles, conteneurs, espacement, responsive
+───────────────────────────────────────────────────────── */
+
+.container        { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: 28px; }
+.container--wide  { max-width: 1280px; }
+.container--narrow{ max-width: 780px; }
+
+.section     { padding-block: 88px; }
+.section--sm { padding-block: 52px; }
+.section--xs { padding-block: 32px; }
+.section--alt{ background: var(--color-surface); }
+.section--alt2{ background: var(--color-surface-2); }
+
+.page-wrapper { padding-top: var(--navbar-h); min-height: 100vh; }
+
+/* ── Flex helpers ─────────────────────────────────────── */
+.flex         { display: flex; }
+.flex-col     { display: flex; flex-direction: column; }
+.flex-center  { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-wrap    { flex-wrap: wrap; }
+.items-start  { align-items: flex-start; }
+.items-center { align-items: center; }
+.gap-8  { gap: 8px;  }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+
+/* ── Grid helpers ─────────────────────────────────────── */
+.grid         { display: grid; }
+.grid-2       { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.grid-3       { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4       { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.grid-auto-2  { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.grid-auto-3  { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.grid-auto-4  { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+/* ── Spacing ──────────────────────────────────────────── */
+.mb-4  { margin-bottom: 4px;  }
+.mb-8  { margin-bottom: 8px;  }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-48 { margin-bottom: 48px; }
+
+.p-16  { padding: 16px; }
+.p-20  { padding: 20px; }
+.p-24  { padding: 24px; }
+.p-28  { padding: 28px; }
+.p-32  { padding: 32px; }
+.px-20 { padding-inline: 20px; }
+.py-12 { padding-block: 12px;  }
+.py-14 { padding-block: 14px;  }
+
+/* ── Dot grid pattern doux ────────────────────────────── */
+.grid-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(74, 123, 90, 0.09) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+/* ── Surface background ───────────────────────────────── */
+.surface  { background: var(--color-surface);   }
+.surface2 { background: var(--color-surface-2); }
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .container  { padding-inline: 18px; }
+  .section    { padding-block: 56px;  }
+  .grid-2, .grid-3, .grid-4   { grid-template-columns: 1fr; }
+  .grid-auto-2, .grid-auto-3, .grid-auto-4 { grid-template-columns: 1fr; }
+  .hide-mobile  { display: none !important; }
+}
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}

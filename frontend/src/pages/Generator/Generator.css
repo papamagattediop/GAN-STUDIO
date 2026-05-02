@@ -1,0 +1,178 @@
+/* ─────────────────────────────────────────────────────────
+   Generator.css
+───────────────────────────────────────────────────────── */
+
+.generator { padding-block: 48px 64px; }
+
+.generator__header { margin-bottom: 36px; }
+.generator__tag    { margin-bottom: 12px; }
+.generator__title  {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+.generator__sub { color: var(--color-text-secondary); }
+
+/* ── Layout ───────────────────────────────────────────── */
+.generator__layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Panel (controls) ─────────────────────────────────── */
+.gen-panel { padding: 20px; margin-bottom: 14px; }
+
+.gen-panel__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* Model selector buttons */
+.gen-model-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: 0.5px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+  margin-bottom: 6px;
+}
+.gen-model-btn:last-child { margin-bottom: 0; }
+.gen-model-btn--active { }
+
+.gen-model-btn__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+.gen-model-btn__name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.gen-model-btn--active .gen-model-btn__name { color: var(--color-text-primary); }
+.gen-model-btn__meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+.gen-model-btn__check { margin-left: auto; flex-shrink: 0; }
+
+/* Count selector */
+.gen-count-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.gen-count-btn {
+  padding: 8px 0;
+  background: transparent;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.gen-count-btn--active {
+  background: var(--color-green-faint);
+  border-color: var(--color-green-pale);
+  color: var(--color-green);
+}
+.gen-count-btn:not(.gen-count-btn--active):hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+/* Model info rows */
+.gen-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--color-border);
+}
+.gen-info-row:last-child { border-bottom: none; }
+.gen-info-row__label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+.gen-info-row__value {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* ── Generate button ──────────────────────────────────── */
+.gen-submit { width: 100%; padding: 13px; font-size: 15px; }
+.gen-time {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+/* ── Results panel ────────────────────────────────────── */
+.gen-results { padding: 24px; }
+
+.gen-results__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gen-results__title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.gen-results__sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.gen-grid {
+  display: grid;
+  gap: 10px;
+}
+.gen-grid--1 { grid-template-columns: 1fr; max-width: 340px; }
+.gen-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.gen-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.gen-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .generator__layout {
+    grid-template-columns: 1fr;
+  }
+  .gen-grid--4 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 520px) {
+  .gen-grid--3,
+  .gen-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}

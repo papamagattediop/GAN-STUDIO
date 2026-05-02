@@ -1,0 +1,50 @@
+/* ─────────────────────────────────────────────────────────
+   typography.css — Système typographique
+───────────────────────────────────────────────────────── */
+
+.font-display { font-family: var(--font-display); }
+.font-sans    { font-family: var(--font-sans); }
+
+/* ── Weights ──────────────────────────────────────────── */
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+
+/* ── Scale ────────────────────────────────────────────── */
+.text-xs   { font-size: 11px; }
+.text-sm   { font-size: 13px; }
+.text-base { font-size: 15px; }
+.text-lg   { font-size: 18px; }
+.text-xl   { font-size: 22px; }
+.text-2xl  { font-size: 28px; }
+.text-3xl  { font-size: 36px; }
+.text-4xl  { font-size: clamp(28px, 4vw, 44px); }
+.text-hero { font-size: clamp(38px, 6.5vw, 74px); }
+
+/* ── Colors ───────────────────────────────────────────── */
+.text-primary   { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted     { color: var(--color-text-muted); }
+.text-green     { color: var(--color-green); }
+.text-center    { text-align: center; }
+
+/* ── Gradient text ────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-green)      0%,
+    var(--color-green-mid)  50%,
+    var(--color-green-light)100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Letter spacing ───────────────────────────────────── */
+.ls-tight  { letter-spacing: -0.03em; }
+.ls-snug   { letter-spacing: -0.02em; }
+.ls-wide   { letter-spacing: 0.05em;  }
+.ls-widest { letter-spacing: 0.10em;  }

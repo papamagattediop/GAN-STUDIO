@@ -1,0 +1,80 @@
+/* ─────────────────────────────────────────────────────────
+   tokens.css — Design tokens
+   Palette : vert sauge · blanc · gris naturel
+───────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Backgrounds ──────────────────────────────────── */
+  --color-bg:           #F5F8F5;   /* blanc légèrement teinté vert */
+  --color-surface:      #ECF1EC;   /* surface sauge très douce     */
+  --color-surface-2:    #E4EBE4;   /* surface plus marquée         */
+  --color-card:         #FFFFFF;   /* cartes pures blanches        */
+  --color-card-hover:   #FAFCFA;   /* survol carte                 */
+
+  /* ── Vert sauge — palette principale ─────────────── */
+  --color-green:         #4A7B5A;  /* vert sauge principal         */
+  --color-green-mid:     #5E9470;  /* vert moyen                   */
+  --color-green-light:   #7EAF8E;  /* vert clair                   */
+  --color-green-pale:    #BAD5C2;  /* vert très pâle               */
+  --color-green-whisper: #DCECDf;  /* vert presque blanc           */
+  --color-green-faint:   rgba(74, 123, 90, 0.07);
+  --color-green-glow:    rgba(74, 123, 90, 0.14);
+
+  /* ── Gris naturels ────────────────────────────────── */
+  --color-gray-50:  #F9FAFA;
+  --color-gray-100: #F0F2F0;
+  --color-gray-200: #E2E6E2;
+  --color-gray-300: #C8D0C9;
+  --color-gray-400: #9FAD9F;
+  --color-gray-500: #728472;
+  --color-gray-600: #536053;
+  --color-gray-700: #374537;
+  --color-gray-900: #1A281A;
+
+  /* ── Texte ────────────────────────────────────────── */
+  --color-text-primary:   #1E2E20;   /* presque noir, teinté vert   */
+  --color-text-secondary: #3C5440;   /* vert foncé lisible          */
+  --color-text-muted:     #7A917C;   /* sauge discret               */
+  --color-text-light:     #A3B8A5;   /* très discret                */
+
+  /* ── Borders ──────────────────────────────────────── */
+  --color-border:        rgba(74, 123, 90, 0.13);
+  --color-border-medium: rgba(74, 123, 90, 0.22);
+  --color-border-strong: rgba(74, 123, 90, 0.38);
+
+  /* ── Sémantique ───────────────────────────────────── */
+  --color-error:        rgba(180, 55, 55, 0.08);
+  --color-error-text:   #9B2C2C;
+  --color-error-border: rgba(180, 55, 55, 0.22);
+
+  /* ── Typographie ──────────────────────────────────── */
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+
+  /* ── Radii ────────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   22px;
+  --radius-full: 9999px;
+
+  /* ── Ombres douces ────────────────────────────────── */
+  --shadow-xs:   0 1px 4px rgba(30, 46, 32, 0.06);
+  --shadow-sm:   0 2px 10px rgba(30, 46, 32, 0.08);
+  --shadow-md:   0 6px 24px rgba(30, 46, 32, 0.10);
+  --shadow-lg:   0 12px 40px rgba(30, 46, 32, 0.12);
+  --shadow-card: 0 2px 12px rgba(74, 123, 90, 0.08);
+  --shadow-hover:0 8px 32px rgba(74, 123, 90, 0.14);
+
+  /* ── Transitions ──────────────────────────────────── */
+  --transition-fast: 140ms ease;
+  --transition-base: 240ms ease;
+  --transition-slow: 380ms ease;
+
+  /* ── Z-index ──────────────────────────────────────── */
+  --z-nav:    100;
+  --z-modal:  300;
+
+  /* ── Navbar ───────────────────────────────────────── */
+  --navbar-h: 64px;
+}
