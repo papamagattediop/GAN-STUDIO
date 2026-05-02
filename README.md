@@ -109,44 +109,6 @@ GAN_Studio/
 
 <br/>
 
-## Variables d'environnement
-
-Créer un fichier `backend/.env` (non versionné) :
-
-```env
-HF_TOKEN=hf_votre_token_huggingface
-PORT=8000
-```
-
-Créer un fichier `frontend/.env.local` :
-
-```env
-VITE_PROGAN_URL=http://localhost:8000/progan
-VITE_STYLEGAN_URL=http://localhost:8000/stylegan
-VITE_DCGAN_URL=http://localhost:8000/dcgan
-VITE_T2I_URL=http://localhost:8000
-```
-
-<br/>
-
-## Lancement en local
-
-```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python proxy.py
-
-# Frontend (autre terminal)
-cd frontend
-npm install
-npm run dev
-```
-
-Application disponible sur `http://localhost:5173`
-
-<br/>
-
 ## Documentation
 
 | Document | Contenu |
